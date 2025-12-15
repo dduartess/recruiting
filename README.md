@@ -46,7 +46,7 @@ Inclua um arquivo `README.md` com:
 
 | Requisito | Descrição |
 |-----------|-----------|
-| **Versão do Django** | 3.2 ou superior |
+| **Versão do Django** | 4.0 ou superior |
 | **Templates Obrigatórios** | • `landpage.html` - Página inicial com formulário<br>• `login.html` - Tela de login personalizada<br>• `messages_list.html` - Listagem de mensagens<br>• `message_detail.html` - Visualização individual<br>• `message_edit.html` - Edição de mensagem (ou modal)<br>• `message_delete_confirm.html` - Confirmação de exclusão (ou modal)<br>• `logout_confirm.html` - Confirmação de logout (ou modal) |
 | **Model** | Mensagem com campos: `nome`, `email`, `mensagem`, `data_envio`, `lido` (boolean) |
 | **Autenticação** | Sistema de autenticação para área administrativa |
@@ -131,6 +131,18 @@ Os seguintes elementos serão considerados **pontos extras** na avaliação:
 ### 🌐 Landpage
 
 > **Liberdade total!** Escolha qualquer produto/serviço de sua preferência (pode ser real ou fictício)
+
+**Sugestões de temas:**
+- 📱 Aplicativo mobile ou SaaS
+- 🏋️ Academia ou estúdio fitness
+- 🍕 Restaurante ou delivery de comida
+- 💼 Agência de marketing digital
+- 🏠 Imobiliária ou arquitetura
+- 🎓 Plataforma de cursos online
+- 👔 Consultoria empresarial
+- 🎨 Portfólio criativo ou design studio
+- 🚗 Serviços automotivos
+- 💻 Empresa de tecnologia/software house
 
 **Exemplos na pasta `/examples`** (boas referências de design)
 
