@@ -327,6 +327,35 @@ O importante é ver seu raciocínio, sua abordagem aos problemas e a qualidade d
 
 ---
 
+## 🤖 Sobre o Uso de Agentes de IA
+
+O uso de **ferramentas de IA** (como ChatGPT, GitHub Copilot, Claude, etc.) **não é proibido**. Na verdade, reconhecemos que essas ferramentas fazem parte do dia a dia do desenvolvimento moderno.
+
+### ⚠️ Importante
+
+**Você DEVE ser capaz de:**
+
+- 📖 **Explicar tecnicamente** cada parte do código que você entrega
+- 🧠 **Entender completamente** o que está acontecendo em todas as linhas
+- 🔧 **Justificar decisões** de arquitetura e escolhas técnicas
+- 🐛 **Debugar problemas** que possam surgir no código
+- 💬 **Responder perguntas** sobre qualquer aspecto da implementação
+
+### 🎯 Durante a Avaliação
+
+Na reunião de avaliação, poderemos:
+- Pedir explicações sobre trechos específicos do código
+- Questionar sobre alternativas às soluções implementadas
+- Discutir trade-offs e decisões técnicas tomadas
+
+### 💡 Dica
+
+Use IA como **ferramenta de apoio** e **aceleração**, não como substituto do seu conhecimento. O código gerado por IA deve ser revisado, compreendido e adaptado por você.
+
+**Lembre-se:** O objetivo é avaliar **suas** habilidades técnicas e de raciocínio! 🚀
+
+---
+
 <div align="center">
 
 ### Boa sorte com o teste técnico! 🌟
