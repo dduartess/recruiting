@@ -12,7 +12,8 @@ Nada de complicar o que pode ser simples. A stack escolhida foi:
 *   **Tailwind CSS**: Para estilização rápida e responsiva (usado via CDN).
 *   **Alpine.js**: Para gerenciar estados simples no frontend, como abrir e fechar modais de confirmação.
 *   **HTMX**: Para interações dinâmicas sem precisar recarregar a página (ex: marcar mensagem como lida).
-*   **SQLite**: Banco de dados padrão para desenvolvimento.
+*   **PostgreSQL**: Banco de dados relacional robusto (rodando via Docker).
+*   **Docker**: Para containerização do banco de dados.
 
 ## 🚀 Funcionalidades
 
@@ -31,21 +32,29 @@ Nada de complicar o que pode ser simples. A stack escolhida foi:
 
 ## 🏃‍♂️ Como rodar o projeto
 
-Como o projeto usa Django padrão e CDNs para o frontend, é bem tranquilo de subir:
+O projeto utiliza Docker para o banco de dados, então certifique-se de ter o Docker e o Docker Compose instalados.
 
 1.  **Clone o repositório e entre na pasta:**
     ```bash
     git clone <seu-repo>
     cd recruiting
+    cd src
     ```
 
-2.  **Instale o Django:**
+2.  **Instale as dependências:**
     ```bash
-    pip install django
+    pip install -r requirements.txt
     ```
 
-3.  **Prepare o banco de dados e rode o servidor:**
+3.  **Suba o banco de dados e configure o ambiente:**
     ```bash
+    # Inicia o PostgreSQL
+    docker-compose up -d
+    
+    # Cria o banco de dados (se não existir)
+    python create_database.py
+    
+    # Aplica as migrações e roda o servidor
     python manage.py migrate
     python manage.py runserver
     ```
