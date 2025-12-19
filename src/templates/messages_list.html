@@ -31,26 +31,29 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    {% for form in forms %}
+                    {% for mensagem in mensagens %}
                     <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ form.name }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ form.email }}</td>
-                        <td class="px-6 py-4">{{ form.message|truncatechars:50 }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ form.createdAt|date:"d/m/Y H:i" }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ mensagem.nome }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ mensagem.email }}</td>
+                        <td class="px-6 py-4">{{ mensagem.mensagem|truncatechars:50 }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ mensagem.data_envio|date:"d/m/Y H:i" }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            {% if form.isRead %}
-                            <span
-                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Sim</span>
+                            {% if mensagem.lido %}
+                            <a href="{% url 'forms:toggle_read' mensagem.id %}" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 hover:bg-green-200 cursor-pointer" title="Marcar como não lido">
+                                Lida
+                            </a>
                             {% else %}
-                            <span
-                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Não</span>
+                            <a href="{% url 'forms:toggle_read' mensagem.id %}" class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 hover:bg-red-200 cursor-pointer" title="Marcar como lida">
+                                Não lida
+                            </a>
                             {% endif %}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <a href="{% url 'forms:editar' form.id %}"
-                                class="text-indigo-600 hover:text-indigo-900 mr-4">Editar</a>
-                            <a href="{% url 'forms:deletar' form.id %}" class="text-red-600 hover:text-red-900"
-                                onclick="return confirm('Tem certeza que deseja deletar?');">Deletar</a>
+                            <a href="{% url 'forms:detalhe' mensagem.id %}"
+                                class="text-blue-600 hover:text-blue-900 mr-3">Ver</a>
+                            <a href="{% url 'forms:editar' mensagem.id %}"
+                                class="text-indigo-600 hover:text-indigo-900 mr-3">Editar</a>
+                            <a href="{% url 'forms:deletar' mensagem.id %}" class="text-red-600 hover:text-red-900">Excluir</a>
                         </td>
                     </tr>
                     {% empty %}
@@ -62,7 +65,7 @@
             </table>
         </div>
         <div class="mt-4">
-            <a href="{% url 'forms:Home' %}" class="text-blue-600 hover:underline">Voltar para Home</a>
+            <a href="{% url 'forms:landpage' %}" class="text-blue-600 hover:underline">Voltar para Home</a>
         </div>
     </div>
 </body>
